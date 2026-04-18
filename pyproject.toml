@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyrepo-test-agent"
+version = "0.1.0"
+description = "Agentic pytest generation pipeline for Python repositories."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.optional-dependencies]
+api = [
+    "fastapi>=0.100",
+    "httpx>=0.24",
+]
+llm = [
+    "zai",
+]
+
+[project.scripts]
+pyrepo-test-agent = "app.main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

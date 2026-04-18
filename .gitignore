@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.tmp_pytest/
+.agent_test_output/
+output/
+htmlcov/
+.coverage
+coverage.json
+.env
