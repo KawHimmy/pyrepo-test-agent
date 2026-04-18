@@ -1,9 +1,7 @@
 # pyrepo-test-agent
 
-`pyrepo-test-agent` 是根据 `架构设计详解.md` 落地的完整工程实现。
-它面向 Python 仓库自动完成仓库扫描、行为规格推断、pytest 测试规划、
-并行测试生成、测试执行、失败归因、有限轮次测试修复，并最终输出
-Markdown 报告。
+`pyrepo-test-agent` 是面向 Python 仓库自动完成仓库扫描、行为规格推断、pytest 测试规划、
+并行测试生成、测试执行、失败归因、有限轮次测试修复，并最终输出报告。
 
 当前项目是 LLM 驱动的 Agent 流水线，默认通过 ZAI GLM API 完成规格推断、
 测试规划、测试生成和测试修复。运行前需要配置 `ZAI_API_KEY`；没有 Key
