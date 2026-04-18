@@ -11,7 +11,7 @@ from app.llm.zai_client import ChatClient
 
 
 class RegressionCaseAgent(BaseAgent):
-    """Generate changed-file import guards for regression coverage."""
+    """为变更文件生成回归保护测试。"""
 
     def __init__(self, llm_client: ChatClient) -> None:
         super().__init__()

@@ -10,7 +10,7 @@ from app.parsers.import_graph import build_import_graph
 
 
 class RepoScannerAgent(BaseAgent):
-    """Identify Python files, symbols, API routes, imports, and test gaps."""
+    """识别 Python 文件、符号、API 路由、导入关系和测试缺口。"""
 
     async def execute(self, state: TestGenState) -> TestGenState:
         repo = Path(state.repo_path).resolve()
@@ -39,4 +39,3 @@ class RepoScannerAgent(BaseAgent):
         )
         state.repository_info = info
         return state
-

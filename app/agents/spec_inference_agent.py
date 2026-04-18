@@ -10,7 +10,7 @@ from app.llm.zai_client import ChatClient
 
 
 class SpecInferenceAgent(BaseAgent):
-    """Infer lightweight behavioral specs from static symbol metadata."""
+    """基于静态符号元数据推断轻量行为规格。"""
 
     def __init__(self, llm_client: ChatClient) -> None:
         super().__init__()

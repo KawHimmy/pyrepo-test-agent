@@ -1,2 +1,1 @@
-"""Test execution helpers."""
-
+"""测试执行辅助工具。"""

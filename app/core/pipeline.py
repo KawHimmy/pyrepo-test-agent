@@ -13,7 +13,7 @@ from app.llm.zai_client import ChatClient
 
 
 class TestGenerationPipeline:
-    """Pipeline + parallel writer fork + execution/repair loop."""
+    """Pipeline、并行 Writer 分叉与执行修复循环的组合编排。"""
 
     __test__ = False
 

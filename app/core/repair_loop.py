@@ -8,7 +8,7 @@ from app.llm.zai_client import ChatClient
 
 
 class RepairLoop:
-    """Execute pytest, analyze failures, and apply bounded test repairs."""
+    """执行 pytest、分析失败并进行有限轮次测试修复。"""
 
     def __init__(
         self,

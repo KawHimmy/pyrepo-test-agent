@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def extract_python_code(text: str) -> str:
-    """Extract Python from a fenced block, or return stripped text."""
+    """从 Markdown 代码块中提取 Python；没有代码块时返回去除首尾空白的文本。"""
 
     stripped = text.strip()
     if "```" not in stripped:
@@ -20,4 +20,3 @@ def extract_python_code(text: str) -> str:
 
 def looks_like_pytest_file(code: str) -> bool:
     return "def test_" in code or "@pytest.mark.parametrize" in code
-

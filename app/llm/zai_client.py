@@ -18,11 +18,10 @@ class ChatClient(Protocol):
 
 
 class ZaiChatClient:
-    """Async wrapper around the synchronous ZAI chat completions API.
+    """对同步 ZAI chat completions API 的异步封装。
 
-    GLM accounts in this project are treated as having 5 concurrent requests.
-    All agents share this client, so the semaphore protects the whole pipeline,
-    including the parallel writer stage.
+    本项目将 GLM 账号按 5 个并发请求处理。所有 Agent 共享同一个客户端，
+    因此信号量会保护整条 Pipeline，包括并行 Writer 阶段。
     """
 
     def __init__(
@@ -35,7 +34,7 @@ class ZaiChatClient:
     ) -> None:
         try:
             from zai import ZhipuAiClient
-        except ImportError as exc:  # pragma: no cover - depends on local env.
+        except ImportError as exc:  # pragma: no cover - 依赖本地环境。
             raise RuntimeError("Package 'zai' is not installed. Install with: python -m pip install zai") from exc
 
         self.model = model
@@ -63,7 +62,7 @@ class ZaiChatClient:
                         timeout=self._request_timeout_seconds,
                     )
                 return response.choices[0].message.content
-            except Exception as exc:  # noqa: BLE001 - SDK exception types vary by version.
+            except Exception as exc:  # noqa: BLE001 - SDK 异常类型会随版本变化。
                 last_error = exc
                 if attempt >= self._max_retries or not _is_retryable_error(exc):
                     raise

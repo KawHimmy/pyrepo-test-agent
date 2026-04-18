@@ -11,7 +11,7 @@ from app.llm.zai_client import ChatClient
 
 
 class ApiTestWriterAgent(BaseAgent):
-    """Generate tests that verify FastAPI-style route registration when possible."""
+    """在可行时生成验证 FastAPI 风格路由注册的测试。"""
 
     def __init__(self, llm_client: ChatClient) -> None:
         super().__init__()

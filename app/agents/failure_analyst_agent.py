@@ -7,7 +7,7 @@ from app.core.state import FailureReport, TestGenState
 
 
 class FailureAnalystAgent(BaseAgent):
-    """Classify pytest failures before the repair step."""
+    """在修复步骤前对 pytest 失败进行归因分类。"""
 
     async def execute(self, state: TestGenState) -> TestGenState:
         latest = state.latest_run

@@ -10,7 +10,7 @@ from app.llm.zai_client import ChatClient
 
 
 class TestPlannerAgent(BaseAgent):
-    """Convert inferred specs into prioritized test tasks."""
+    """将推断出的规格转换为带优先级的测试任务。"""
 
     def __init__(self, llm_client: ChatClient) -> None:
         super().__init__()

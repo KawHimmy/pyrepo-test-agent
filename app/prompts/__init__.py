@@ -1,2 +1,1 @@
-"""Prompt placeholders for future LLM-backed agents."""
-
+"""LLM 驱动 Agent 使用的 Prompt 模板。"""

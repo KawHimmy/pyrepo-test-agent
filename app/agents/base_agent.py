@@ -7,7 +7,7 @@ from app.core.state import TestGenState
 
 
 class BaseAgent(ABC):
-    """Template-method base class shared by all agents."""
+    """所有 Agent 共用的模板方法基类。"""
 
     name: str
 
@@ -20,7 +20,7 @@ class BaseAgent(ABC):
         try:
             state = await self.execute(state)
             self.log_success(state, time.perf_counter() - start)
-        except Exception as exc:  # noqa: BLE001 - agent boundary catches all errors.
+        except Exception as exc:  # noqa: BLE001 - Agent 边界统一捕获所有异常。
             message = f"{self.name}: {exc}"
             state.add_error(message)
             self.log_error(state, message)
@@ -28,7 +28,7 @@ class BaseAgent(ABC):
 
     @abstractmethod
     async def execute(self, state: TestGenState) -> TestGenState:
-        """Run agent-specific behavior."""
+        """执行具体 Agent 的业务逻辑。"""
 
     def log_start(self, state: TestGenState) -> None:
         state.agent_events.append(f"{self.name}: start")
@@ -38,4 +38,3 @@ class BaseAgent(ABC):
 
     def log_error(self, state: TestGenState, message: str) -> None:
         state.agent_events.append(f"{self.name}: error - {message}")
-

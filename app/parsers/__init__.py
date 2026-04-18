@@ -1,2 +1,1 @@
-"""Static analysis helpers."""
-
+"""静态分析辅助工具。"""

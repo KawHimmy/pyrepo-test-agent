@@ -7,7 +7,7 @@ from typing import Any, ClassVar
 
 @dataclass(slots=True)
 class SymbolInfo:
-    """Static description of a Python symbol discovered in a repository."""
+    """仓库中发现的 Python 符号静态描述。"""
 
     symbol_id: str
     name: str

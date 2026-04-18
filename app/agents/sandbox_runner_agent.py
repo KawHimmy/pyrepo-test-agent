@@ -9,7 +9,7 @@ from app.runners.pytest_runner import PytestRunner, load_coverage_summary
 
 
 class SandboxRunnerAgent(BaseAgent):
-    """Run generated pytest files and capture the result."""
+    """运行生成的 pytest 文件并捕获执行结果。"""
 
     def __init__(self, timeout_seconds: int = 120) -> None:
         super().__init__()

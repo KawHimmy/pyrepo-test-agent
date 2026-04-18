@@ -18,7 +18,7 @@ def test_pipeline_generates_and_runs_tests_with_real_glm(tmp_path: Path) -> None
     (repo / "calculator.py").write_text(
         '''
 def add(left: int, right: int) -> int:
-    """Return the sum of two integers."""
+    """返回两个整数之和。"""
     return left + right
 ''',
         encoding="utf-8",

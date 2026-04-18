@@ -11,7 +11,7 @@ from app.core.state import RunResult
 
 
 class PytestRunner:
-    """Run pytest against generated tests in a controlled subprocess."""
+    """在受控子进程中对生成测试运行 pytest。"""
 
     def __init__(self, timeout_seconds: int = 120) -> None:
         self.timeout_seconds = timeout_seconds

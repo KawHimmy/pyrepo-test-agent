@@ -7,7 +7,7 @@ from app.core.state import TestGenState
 
 
 class ParallelExecutor:
-    """Run independent agents concurrently while preserving partial results."""
+    """并发运行彼此独立的 Agent，并保留部分执行结果。"""
 
     def __init__(self, agents: list[BaseAgent]) -> None:
         self.agents = agents
@@ -21,4 +21,3 @@ class ParallelExecutor:
             if isinstance(result, Exception):
                 state.add_error(f"{agent.name}: {result}")
         return state
-

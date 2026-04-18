@@ -8,7 +8,7 @@ def test_ast_parser_discovers_symbols_and_docstrings(tmp_path: Path) -> None:
     module.write_text(
         '''
 def add(left: int, right: int) -> int:
-    """Return the sum."""
+    """返回两数之和。"""
     return left + right
 
 
@@ -25,5 +25,4 @@ class Box:
     analysis = analyze_python_file(module, str(tmp_path))
     assert analysis.module_name == "math_tools"
     assert [symbol.name for symbol in analysis.symbols] == ["add", "Box"]
-    assert analysis.symbols[0].docstring == "Return the sum."
-
+    assert analysis.symbols[0].docstring == "返回两数之和。"

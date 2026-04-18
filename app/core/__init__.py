@@ -1,2 +1,1 @@
-"""Core orchestration primitives."""
-
+"""核心编排原语。"""

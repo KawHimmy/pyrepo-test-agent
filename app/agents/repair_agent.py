@@ -12,7 +12,7 @@ from app.llm.zai_client import ChatClient
 
 
 class RepairAgent(BaseAgent):
-    """Apply bounded, test-only repairs for common generated-test failures."""
+    """对常见生成测试失败进行有限轮次、仅限测试文件的修复。"""
 
     def __init__(self, llm_client: ChatClient) -> None:
         super().__init__()

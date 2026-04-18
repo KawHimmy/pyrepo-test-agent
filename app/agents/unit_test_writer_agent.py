@@ -11,7 +11,7 @@ from app.llm.zai_client import ChatClient
 
 
 class UnitTestWriterAgent(BaseAgent):
-    """Generate conservative pytest tests for ordinary functions and classes."""
+    """为普通函数和类生成稳健的 pytest 测试。"""
 
     def __init__(self, llm_client: ChatClient) -> None:
         super().__init__()
